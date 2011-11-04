@@ -63,6 +63,8 @@ $(document).ready(function(){
 		 		
 		 		var note = 1 * mul_maj;
 		 	
+		 		total++;
+		 	
 		 		//if bigram is in the array
 		 		if(score[word])
 		 		{
