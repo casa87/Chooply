@@ -98,7 +98,7 @@ $(document).ready(function(){
 	for(key in score)
 	{
 		//focus on more important words
-		if(score[key] > total/100)
+		if(score[key] > total/200)
 		{
 			$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
 		}	
