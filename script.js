@@ -103,6 +103,8 @@ $(document).ready(function(){
 	
 	
 	
+	
+	//////////////////
 	//sort associative array
 	var score_sort = new Array();		//to store words
 	var score_note = new Array();		//to store score
@@ -124,11 +126,24 @@ $(document).ready(function(){
 				score_sort[score[key]] = new Array();
 				score_sort[score[key]].push(key);
 			}
-			$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
+			//$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
 		}	
 	}
 	
 	
 	
+	
+	
+	//////////////////
+	//show keywords
+	for(note in score_note)
+	{
+		$('#chooply_bar').append(score_note[note] +"<br>")
+		for(word in score_sort[score_note[note]])
+		{
+			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>")
+		}
+	
+	}
 	
 })
