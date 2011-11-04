@@ -10,6 +10,16 @@ $(document).ready(function(){
 	
 	
 	
+	
+	
+	/////////////////////////////////////////////////
+	//fonction to sort array by number
+	function sortNumber(a,b)
+	{
+		return a - b;
+	}
+	
+	
 	/////////////////////////////////////////////////
 	//fonction to count the frequence of each words
 	function calcul_score(words)
@@ -136,6 +146,7 @@ $(document).ready(function(){
 	
 	//////////////////
 	//show keywords
+	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
 	{
 		$('#chooply_bar').append(score_note[note] +"<br>")
