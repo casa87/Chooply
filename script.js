@@ -9,29 +9,43 @@ $(document).ready(function(){
 	var total = 0;				//total of words in the page
 	
 	
-
+	
+	/////////////////////////////////////////////////
 	//fonction to count the frequence of each words
 	function calcul_score(words)
 	{
 		for(i=0; i<words.length; i++)
 		{
 		
+			/////////////////////////////////
 			//simple word
-		 	word = words[i].toLowerCase();
+		 	word = words[i];
+		 	
+		 	//if start with majuscule increase score
+		 	var mul_maj = 1
+		 	if(/^[A-Z][a-z]{3,14}$/.test(word))
+		 	{
+		 		mul_maj = 2
+		 	}
+		 	word = word.toLowerCase();
+	
+		 	
 		 
 		 	total++;	//increment total of words
 		 
 		 	//if words is in the array	
 		 	if(score[word])
 		 	{
-		 		score[word] += 1;
+		 		score[word] += 1 * mul_maj;
 		 	}
 		 	else
 		 	{
-		 		score[word] = 1;
+		 		score[word] = 1 * mul_maj;
 		 	}
 		 	
 		 	
+		 	
+		 	/////////////////////////////////
 		 	//bigram
 		 	if(i < words.length - 1)
 		 	{
