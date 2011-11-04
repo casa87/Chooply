@@ -17,65 +17,70 @@ $(document).ready(function(){
 		for(i=0; i<words.length; i++)
 		{
 		
-			/////////////////////////////////
-			//simple word
-		 	var word = words[i];
-		 	
-		 	//if start with majuscule increase score
-		 	var mul_maj = 1;
-		 	if(/^[A-Z][a-z]{3,14}$/.test(word))
-		 	{
-		 		mul_maj = 2;
-		 	}
-		 	word = word.toLowerCase();
+			
+			if(!stopWords[words[i].toLowerCase()])
+			{
+				/////////////////////////////////
+				//simple word
+			 	var word = words[i];
+			 	
+			 	//if start with majuscule increase score
+			 	var mul_maj = 1;
+			 	if(/^[A-Z][a-z]{3,14}$/.test(word))
+			 	{
+			 		mul_maj = 2;
+			 	}
+			 	word = word.toLowerCase();
+		
+		
+			 	var note = 1 * mul_maj;	
+			 
+			 	total++;	//increment total of words
+			 
+			 	//if words is in the array	
+			 	if(score[word])
+			 	{
+			 		score[word] += note;
+			 	}
+			 	else
+			 	{
+			 		score[word] = note;
+			 	}
+			 	
+			 	
+			 	
+			 	/////////////////////////////////
+			 	//bigram
+			 	if(i < words.length - 1)
+			 	{
 	
-	
-		 	var note = 1 * mul_maj;	
-		 
-		 	total++;	//increment total of words
-		 
-		 	//if words is in the array	
-		 	if(score[word])
-		 	{
-		 		score[word] += note;
-		 	}
-		 	else
-		 	{
-		 		score[word] = note;
-		 	}
-		 	
-		 	
-		 	
-		 	/////////////////////////////////
-		 	//bigram
-		 	if(i < words.length - 1)
-		 	{
-
-		 		var word_double = words[i+1];	
-		 		word += " " + word_double;		//concate 2 words
+			 		var word_double = words[i+1];	
+			 		word += " " + word_double;		//concate 2 words
+			 		
+			 		//if start with majuscule increase score
+			 		if(/^[A-Z][a-z]{3,14}$/.test(word_double))
+			 		{
+			 			mul_maj += 2;
+			 		}
+			 		word = word.toLowerCase();
+			 		
+			 		var note = 1 * mul_maj;
+			 	
+			 		total++;
+			 	
+			 		//if bigram is in the array
+			 		if(score[word])
+			 		{
+			 			score[word] += note;
+			 		}
+			 		else
+			 		{
+			 			score[word] = note;
+			 		}
+			 	}
 		 		
-		 		//if start with majuscule increase score
-		 		if(/^[A-Z][a-z]{3,14}$/.test(word_double))
-		 		{
-		 			mul_maj += 2;
-		 		}
-		 		word = word.toLowerCase();
-		 		
-		 		var note = 1 * mul_maj;
 		 	
-		 		total++;
-		 	
-		 		//if bigram is in the array
-		 		if(score[word])
-		 		{
-		 			score[word] += note;
-		 		}
-		 		else
-		 		{
-		 			score[word] = note;
-		 		}
-		 	}
-		 		
+		 	}	//end stop words	
 
 		 }
 		 	

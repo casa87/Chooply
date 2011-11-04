@@ -6,7 +6,7 @@
     {
       "matches": ["http://*/*"],
       "css": ["style.css"],
-      "js": ["jquery.js", "script.js"]
+      "js": ["jquery.js", "script.js", "stopWords.js"]
     }
   ],
 	"icons":{
