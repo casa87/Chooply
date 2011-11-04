@@ -13,8 +13,9 @@ $(document).ready(function(){
 	{
 		for(i=0; i<words.length; i++)
 		{
-		 	word = words[i];
-		 	
+		 	word = words[i].toLowerCase();;
+		 
+		 	//if words is in the array	
 		 	if(score[word])
 		 	{
 		 		score[word] += 1;
