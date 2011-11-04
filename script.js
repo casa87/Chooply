@@ -103,15 +103,32 @@ $(document).ready(function(){
 	
 	
 	
-	//debug
+	//sort associative array
+	var score_sort = new Array();		//to store words
+	var score_note = new Array();		//to store score
+	
 	for(key in score)
 	{
 		//focus on more important words
 		if(score[key] > total/200)
 		{
+			//if score not present create an array of array
+			if(score_sort[score[key]])
+			{
+			
+				score_sort[score[key]].push(key);
+			}
+			else
+			{
+				score_note.push(score[key])
+				score_sort[score[key]] = new Array();
+				score_sort[score[key]].push(key);
+			}
 			$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
 		}	
 	}
+	
+	
 	
 	
 })

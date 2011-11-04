@@ -68,5 +68,5 @@ stopWords = {
 	'says': true,
 	'some': true,
 	'where': true,
-	'while': true,
-}
+	'while': true
+};
