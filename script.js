@@ -10,5 +10,12 @@ $(document).ready(function(){
 	$('body').append('<div id="chooply_bar">My Bar</div>');
 	
 	//get text of the page
-	$('#chooply_bar').append($('body').text() +"<hr>")
+	//$('#chooply_bar').append($('body').text() +"<hr>");
+	var words = $('body').text().match(/\b([a-zA-Z]{4,14})\b/g);
+	
+	for(key in words)
+	{
+		$('#chooply_bar').append(words[key] +"<br>");
+	}
+	
 })
