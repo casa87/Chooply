@@ -50,25 +50,24 @@ $(document).ready(function(){
 		 	if(i < words.length - 1)
 		 	{
 
-		 		word_double = words[i+1];	//.toLowerCase();
+		 		word_double = words[i+1];	
 		 		word += " " + word_double;		//concate 2 words
 		 		
 		 		//if start with majuscule increase score
-		 		var mul_maj = 1;
 		 		if(/^[A-Z][a-z]{3,14}$/.test(word_double))
 		 		{
-		 			mul_maj = 2;
+		 			mul_maj += 2;
 		 		}
-		 		word = word.toLowerCase()
+		 		word = word.toLowerCase();
 		 	
 		 		//if bigram is in the array
 		 		if(score[word])
 		 		{
-		 			score[word] += 1;
+		 			score[word] += 1 * mul_maj;
 		 		}
 		 		else
 		 		{
-		 			score[word] = 1;
+		 			score[word] = 1 * mul_maj;
 		 		}
 		 	}
 		 		
