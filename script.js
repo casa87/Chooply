@@ -11,7 +11,8 @@ $(document).ready(function(){
 	
 	//get text of the page
 	//$('#chooply_bar').append($('body').text() +"<hr>");
-	var words = $('body').text().match(/\b([a-zA-Z]{4,14})\b/g);
+	var words = $('body>div').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);
+	
 	
 	for(key in words)
 	{
