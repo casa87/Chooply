@@ -122,7 +122,7 @@ $(document).ready(function(){
 	for(key in score)
 	{
 		//focus on more important words
-		if(score[key] > total/200)
+		if(score[key] > total/180)
 		{
 			//if score not present create an array of array
 			if(score_sort[score[key]])
@@ -149,10 +149,10 @@ $(document).ready(function(){
 	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
 	{
-		$('#chooply_bar').append(score_note[note] +"<br>")
+		$('#chooply_bar').append(score_note[note] +"<br>");
 		for(word in score_sort[score_note[note]])
 		{
-			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>")
+			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
 		}
 	
 	}

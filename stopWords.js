@@ -5,11 +5,13 @@
 
 
 stopWords = {
+	//javascript and css words
 	'cookie': true,
 	'this': true,
 	'math': true,
 	'location': true,
 	'http': true,
+	'https': true,
 	'www': true,
 	'com': true,
 	'path': true,
@@ -42,6 +44,8 @@ stopWords = {
 	'html': true,
 	'doubleclick': true,
 	
+	
+	//site words
 	'login': true,
 	'logout': true,
 	'menu': true,
@@ -50,9 +54,19 @@ stopWords = {
 	'continue': true,
 	'comment': true,
 	'comments': true,
+	'time': true,
+	'charset': true,
+	'escape': true,
+	'context': true,
+	'loadlikebutton':true,
 	
+	
+	//english words
 	'when': true,
 	'the': true,
+	'there': true,
+	'they': true,
+	'them': true,
 	'that': true,
 	'than': true,
 	'these': true,
@@ -68,5 +82,6 @@ stopWords = {
 	'says': true,
 	'some': true,
 	'where': true,
+	'over': true,
 	'while': true
 };
