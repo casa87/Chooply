@@ -15,7 +15,9 @@ $(document).ready(function(){
 	{
 		for(i=0; i<words.length; i++)
 		{
-		 	word = words[i].toLowerCase();;
+		
+			//simple word
+		 	word = words[i].toLowerCase();
 		 
 		 	total++;	//increment total of words
 		 
@@ -28,7 +30,29 @@ $(document).ready(function(){
 		 	{
 		 		score[word] = 1;
 		 	}
-		 }	
+		 	
+		 	
+		 	//bigram
+		 	if(i < words.length - 1)
+		 	{
+
+		 		word_double = words[i+1].toLowerCase();
+		 		word += " " + word_double;		//concate 2 words
+		 	
+		 		//if bigram is in the array
+		 		if(score[word])
+		 		{
+		 			score[word] += 1;
+		 		}
+		 		else
+		 		{
+		 			score[word] = 1;
+		 		}
+		 	}
+		 		
+
+		 }
+		 	
 	}
 
 
