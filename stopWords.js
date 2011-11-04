@@ -40,6 +40,7 @@ stopWords = {
 	'style': true,
 	'init': true,
 	'html': true,
+	'doubleclick': true,
 	
 	'login': true,
 	'logout': true,

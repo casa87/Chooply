@@ -17,12 +17,12 @@ $(document).ready(function(){
 		for(i=0; i<words.length; i++)
 		{
 		
-			
-			if(!stopWords[words[i].toLowerCase()])
+		
+			var word = words[i];
+			if(!stopWords[word.toLowerCase()])
 			{
 				/////////////////////////////////
 				//simple word
-			 	var word = words[i];
 			 	
 			 	//if start with majuscule increase score
 			 	var mul_maj = 1;
@@ -54,29 +54,33 @@ $(document).ready(function(){
 			 	if(i < words.length - 1)
 			 	{
 	
-			 		var word_double = words[i+1];	
-			 		word += " " + word_double;		//concate 2 words
-			 		
-			 		//if start with majuscule increase score
-			 		if(/^[A-Z][a-z]{3,14}$/.test(word_double))
-			 		{
-			 			mul_maj += 2;
-			 		}
-			 		word = word.toLowerCase();
-			 		
-			 		var note = 1 * mul_maj;
-			 	
-			 		total++;
-			 	
-			 		//if bigram is in the array
-			 		if(score[word])
-			 		{
-			 			score[word] += note;
-			 		}
-			 		else
-			 		{
-			 			score[word] = note;
-			 		}
+				 	var word_double = words[i+1];	
+				 	if(!stopWords[word_double.toLowerCase()])
+					{	
+				 		
+				 		word += " " + word_double;		//concate 2 words
+				 		
+				 		//if start with majuscule increase score
+				 		if(/^[A-Z][a-z]{3,14}$/.test(word_double))
+				 		{
+				 			mul_maj += 2;
+				 		}
+				 		word = word.toLowerCase();
+				 		
+				 		var note = 1 * mul_maj;
+				 	
+				 		total++;
+				 	
+				 		//if bigram is in the array
+				 		if(score[word])
+				 		{
+				 			score[word] += note;
+				 		}
+				 		else
+				 		{
+				 			score[word] = note;
+				 		}
+				 	}	
 			 	}
 		 		
 		 	
