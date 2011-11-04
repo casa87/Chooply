@@ -8,4 +8,7 @@ $(document).ready(function(){
 
 	//add div on body of the page to create the bar
 	$('body').append('<div id="chooply_bar">My Bar</div>');
+	
+	//get text of the page
+	$('#chooply_bar').append($('body').text() +"<hr>")
 })
