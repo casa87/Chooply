@@ -6,6 +6,8 @@
 $(document).ready(function(){
 
 	var score = new Array();	//score of each words
+	var total = 0;				//total of words in the page
+	
 	
 
 	//fonction to count the frequence of each words
@@ -14,6 +16,8 @@ $(document).ready(function(){
 		for(i=0; i<words.length; i++)
 		{
 		 	word = words[i].toLowerCase();;
+		 
+		 	total++;	//increment total of words
 		 
 		 	//if words is in the array	
 		 	if(score[word])
@@ -36,7 +40,6 @@ $(document).ready(function(){
 	//get words of the first div
 	var words = $('body>div').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);
 	
-	
 	calcul_score(words);
 	
 	
@@ -44,7 +47,11 @@ $(document).ready(function(){
 	//debug
 	for(key in score)
 	{
-		$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
+		//focus on more important words
+		if(score[key] > total/100)
+		{
+			$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
+		}	
 	}
 	
 	
