@@ -1,0 +1,10 @@
+#chooply_bar{
+	position: absolute;
+	top: 100px;
+	height: auto;
+	width: 200px;
+	border: 1px solid red;
+	background-color: grey;
+	font-size: 14px;
+	z-index: 1000;
+}
