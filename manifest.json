@@ -1,0 +1,15 @@
+{
+	"name": "Chooply",
+	"version": "0.1",
+	"description": "find and share url",
+	"content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "css": ["style.css"],
+      "js": ["jquery.js", "script.js"]
+    }
+  ],
+	"icons":{
+		"48":"icon_big.png"
+	}
+}
