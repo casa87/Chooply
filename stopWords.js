@@ -76,6 +76,11 @@ stopWords = {
 	'articles': true,
 	'notes': true,
 	'sign': true,
+	'home': true,
+	'infos': true,
+	'post': true,
+	'submit': true,
+	'message': true,
 	
 	
 	//english words
@@ -107,5 +112,8 @@ stopWords = {
 	'maybe': true,
 	'later': true,
 	'thanks': true,
+	'last': true,
+	'lastest': true,
+	'pricing': true,
 	'while': true
 };
