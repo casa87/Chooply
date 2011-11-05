@@ -107,7 +107,7 @@ $(document).ready(function(){
 	
 	
 	//get words of the first div
-	var words = $('body>div').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);
+	var words = $('body>div div').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);		//increase importance of depth div
 	
 	calcul_score(words);
 	
