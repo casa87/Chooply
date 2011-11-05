@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 
 	//add div on body of the page to create the bar
-	$('body').append('<div id="chooply_bar"></div>');
+	$('body').append('<div id="chooply_bar"><ul id="chooply_keywords"></ul></div>');
 	
 	
 	//get words of the first div
@@ -167,7 +167,7 @@ $(document).ready(function(){
 				//test if words used before in keywords
 				if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
 				{
-					$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
+					$('#chooply_bar #chooply_keywords').append("<li>" + score_sort[score_note[note]][word] + "</li>");
 					
 					//set words used
 					keywords_used[bigram_words[0]] = 1;
@@ -179,7 +179,7 @@ $(document).ready(function(){
 				//test if used
 				if(!keywords_used[score_sort[score_note[note]][word]])
 				{
-					$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
+					$('#chooply_bar #chooply_keywords').append("<li>" + score_sort[score_note[note]][word] + "</li>");
 					
 					//set word use
 					keywords_used[score_sort[score_note[note]][word]] = 1;				
