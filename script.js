@@ -146,8 +146,8 @@ $(document).ready(function(){
 	
 	//////////////////
 	//show keywords
-	
 	var keywords_used = new Array;
+	
 	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
 	{
@@ -156,10 +156,12 @@ $(document).ready(function(){
 		{
 			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
 			
-			//test if it's bigram
+			//test if it's bigram. words in bigrams could be only use one time
 			if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
 			{
-				$('#chooply_bar').append("bigram<br>");
+				//extract each words
+				var bigram_words = score_sort[score_note[note]][word].split(' ');
+				$('#chooply_bar').append(bigram_words[0] + " - " + bigram_words[1] + "<br>");
 			}
 
 		}
