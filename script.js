@@ -102,8 +102,11 @@ $(document).ready(function(){
 
 
 
+	//add margin top to original page for the bar
+	$('html').css("margin-top","30px");
+
 	//add div on body of the page to create the bar
-	$('body').append('<div id="chooply_bar"><ul id="chooply_keywords"></ul></div>');
+	$('body').prepend('<div id="chooply_bar"><ul id="chooply_keywords"></ul></div>');
 	
 	
 	//get words of the first div

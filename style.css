@@ -7,6 +7,13 @@
 	background-color: grey;
 	font-size: 14px;
 	z-index: 5000;
+	margin: 0;
+	padding: 0;
+}
+
+#chooply_bar #chooply_keywords li{
+	margin: 0;
+	padding: 0;
 }
 
 #chooply_bar #chooply_keywords li{
