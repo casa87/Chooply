@@ -146,6 +146,8 @@ $(document).ready(function(){
 	
 	//////////////////
 	//show keywords
+	
+	var keywords_used = new Array;
 	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
 	{
@@ -153,6 +155,13 @@ $(document).ready(function(){
 		for(word in score_sort[score_note[note]])
 		{
 			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
+			
+			//test if it's bigram
+			if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
+			{
+				$('#chooply_bar').append("bigram<br>");
+			}
+
 		}
 	
 	}
