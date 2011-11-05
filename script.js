@@ -156,13 +156,26 @@ $(document).ready(function(){
 		{
 			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
 			
+			
 			//test if it's bigram. words in bigrams could be only use one time
 			if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
 			{
 				//extract each words
 				var bigram_words = score_sort[score_note[note]][word].split(' ');
-				$('#chooply_bar').append(bigram_words[0] + " - " + bigram_words[1] + "<br>");
+				
+				
+				//test if words used before in keywords
+				if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
+				{
+					$('#chooply_bar').append(bigram_words[0] + " - " + bigram_words[1] + "<br>");
+					
+					//set words used
+					keywords_used[bigram_words[0]] = 1;
+					keywords_used[bigram_words[1]] = 1;
+					
+				}	
 			}
+
 
 		}
 	
