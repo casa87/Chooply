@@ -170,7 +170,7 @@ $(document).ready(function(){
 				//test if words used before in keywords
 				if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
 				{
-					$('#chooply_bar #chooply_keywords').append("<li>" + score_sort[score_note[note]][word] + "</li>");
+					$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
 					
 					//set words used
 					keywords_used[bigram_words[0]] = 1;
@@ -182,7 +182,7 @@ $(document).ready(function(){
 				//test if used
 				if(!keywords_used[score_sort[score_note[note]][word]])
 				{
-					$('#chooply_bar #chooply_keywords').append("<li>" + score_sort[score_note[note]][word] + "</li>");
+					$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
 					
 					//set word use
 					keywords_used[score_sort[score_note[note]][word]] = 1;				

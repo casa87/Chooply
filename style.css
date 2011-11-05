@@ -1,63 +1,96 @@
+
+
+/*BAR*/
 #chooply_bar{
+	/*size and position*/
 	position: fixed;
 	top: 0px;
-	height: 34px;
+	line-height: 30px;
+	height: 30px;
 	width: 100%;
-	
-	background-color: #FFFFFF;
-	font-size: 14px;
 	z-index: 5000;
 	margin: 0;
 	padding: 0;
 	
-	
+	/*text*/
 	color:#444444;
   	font-family:Arial, Helvetica, sans-serif;
   	font: normal;
 	font-size: 14px;
 
 	border: none;
-	border-bottom: 2px solid #3B5DFF;
+	border-bottom: 2px solid #3B5DFF;	/*bottom border in blue*/
+	background-color: #FFFFFF;
 
+	/*round corner*/
 	border-bottom-left-radius:6px;
 	border-bottom-right-radius:6px;
 	
+	/*gradiant of the bar*/
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
 	background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
 }
 
+
+
+/*UL of keywords*/
 #chooply_bar #chooply_keywords{
-	margin: 8px 0 4px 30px;
+	margin: 6px 0 4px 10px;
+	padding: 0;
+	
 	float: left;
-	max-width: 80%; 
 	overflow: hidden;
+	
+	max-height: 20px;
+	max-width: 80%; 
+	
 }
 
+
+/*keywords li*/
 #chooply_bar #chooply_keywords li{
 	
-	
-	font-family: Calibri, Arial, sans-serif;
-	color:#F2F2F2;
- 	
- 	height: 200px;
+	/*text*/
+   	text-align: center;
 
-	padding: 10px 20px;
-	
-	-webkit-box-shadow:0 0 1px #fff inset;
-    box-shadow:0 0 1px #fff inset;
+ 	/*size and position*/
+ 	margin: 0 0px 20px 10px;
+	padding: 0px;	
 
-
+	/*horizontal list*/
 	display: inline;
 	list-style-type: none;
-	
-
-	margin-left: 20px;
-	padding-bottom: : 20px;
-	
-	background-color: #009AD5;
+	position: relative;
+    display: inline-block;
 	
 }
 
+
+#chooply_bar #chooply_keywords span{
+	
+	/*text*/
+	font-family: Calibri, Arial, sans-serif;
+	color:#F2F2F2;
+
+	/*position*/
+	display: block;
+	float: left;
+	padding: 2px 10px;
+	margin: 0;
+	line-height: 15px;
+	
+	/*look*/
+	background-color: #009AD5;
+	-webkit-box-shadow:0 0 1px #fff inset;
+    box-shadow:0 0 1px #fff inset;
+    border-radius:6px;
+    
+
+}
+
+
+
+/*facebook*/
 #chooply_share{
 	float: right;
 	margin: 8px 30px 0 0;
