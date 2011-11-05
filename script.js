@@ -106,7 +106,7 @@ $(document).ready(function(){
 	$('html').css("margin-top","30px");
 
 	//add div on body of the page to create the bar
-	$('body').prepend('<div id="chooply_bar"><ul id="chooply_keywords"></ul></div>');
+	$('body').prepend('<div id="chooply_bar"><ul id="chooply_keywords"></ul><a name="fb_share" type="icon_link" href="http://www.facebook.com/sharer.php">share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script></div>');
 	
 	
 	//get words of the first div
