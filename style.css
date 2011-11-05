@@ -3,12 +3,21 @@
 	top: 0px;
 	height: auto;
 	width: 100%;
-	border: 1px solid red;
+	
 	background-color: grey;
 	font-size: 14px;
 	z-index: 5000;
 	margin: 0;
 	padding: 0;
+	
+	border: none;
+	border-bottom: 2px solid #3B5DFF;
+
+	border-bottom-left-radius:6px;
+	border-bottom-right-radius:6px;
+	
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
 }
 
 #chooply_bar #chooply_keywords li{
