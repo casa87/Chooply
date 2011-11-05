@@ -144,17 +144,19 @@ $(document).ready(function(){
 	
 	
 	
-	//////////////////
-	//show keywords
+	
 	var keywords_used = new Array;
 	
+	
+	//////////////////
+	//show keywords
 	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
 	{
 		$('#chooply_bar').append(score_note[note] +"<br>");
 		for(word in score_sort[score_note[note]])
 		{
-			$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
+			//$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
 			
 			
 			//test if it's bigram. words in bigrams could be only use one time
@@ -167,13 +169,26 @@ $(document).ready(function(){
 				//test if words used before in keywords
 				if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
 				{
-					$('#chooply_bar').append(bigram_words[0] + " - " + bigram_words[1] + "<br>");
+					$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
 					
 					//set words used
 					keywords_used[bigram_words[0]] = 1;
 					keywords_used[bigram_words[1]] = 1;
 					
 				}	
+			}
+			else		//simple words
+			{
+				//test if used
+				if(!keywords_used[score_sort[score_note[note]][word]])
+				{
+					$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
+					
+					//set word use
+					keywords_used[score_sort[score_note[note]][word]] = 1;
+					
+				}
+			
 			}
 
 
