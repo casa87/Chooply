@@ -59,6 +59,8 @@ stopWords = {
 	'escape': true,
 	'context': true,
 	'loadlikebutton':true,
+	'page': true,
+	'edit': true,
 	
 	
 	//english words
@@ -83,5 +85,8 @@ stopWords = {
 	'some': true,
 	'where': true,
 	'over': true,
+	'maybe': true,
+	'later': true,
+	'thanks': true,
 	'while': true
 };

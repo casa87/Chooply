@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 
 	//add div on body of the page to create the bar
-	$('body').append('<div id="chooply_bar">My Bar</div>');
+	$('body').append('<div id="chooply_bar"></div>');
 	
 	
 	//get words of the first div
@@ -153,12 +153,10 @@ $(document).ready(function(){
 	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
 	{
-		$('#chooply_bar').append(score_note[note] +"<br>");
+		//$('#chooply_bar').append(score_note[note] +"<br>");	//show frequence
 		for(word in score_sort[score_note[note]])
 		{
-			//$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
-			
-			
+		
 			//test if it's bigram. words in bigrams could be only use one time
 			if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
 			{
@@ -173,8 +171,7 @@ $(document).ready(function(){
 					
 					//set words used
 					keywords_used[bigram_words[0]] = 1;
-					keywords_used[bigram_words[1]] = 1;
-					
+					keywords_used[bigram_words[1]] = 1;				
 				}	
 			}
 			else		//simple words
@@ -185,15 +182,16 @@ $(document).ready(function(){
 					$('#chooply_bar').append(score_sort[score_note[note]][word] +"<br>");
 					
 					//set word use
-					keywords_used[score_sort[score_note[note]][word]] = 1;
-					
+					keywords_used[score_sort[score_note[note]][word]] = 1;				
 				}
 			
 			}
 
-
 		}
 	
-	}
+	}	//end show keywords
+	
+	
+	
 	
 })
