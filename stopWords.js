@@ -61,10 +61,13 @@ stopWords = {
 	'loadlikebutton':true,
 	'page': true,
 	'edit': true,
+	'read': true,
+	'free': true,
 	
 	
 	//english words
 	'when': true,
+	'about': true,
 	'the': true,
 	'there': true,
 	'they': true,

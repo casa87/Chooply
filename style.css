@@ -5,6 +5,8 @@
 	/*size and position*/
 	position: fixed;
 	top: 0px;
+	left: 0px;
+	
 	line-height: 30px;
 	height: 30px;
 	width: 100%;
