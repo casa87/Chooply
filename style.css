@@ -1,7 +1,7 @@
 #chooply_bar{
 	position: fixed;
 	top: 0px;
-	height: auto;
+	height: 30px;
 	width: 100%;
 	
 	background-color: grey;
@@ -20,13 +20,20 @@
 	background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
 }
 
-#chooply_bar #chooply_keywords li{
-	margin: 0;
-	padding: 0;
+#chooply_bar #chooply_keywords{
+	float: left;
+	max-height: 20px;
+	max-width: 80%; 
+	overflow: hidden;
 }
 
 #chooply_bar #chooply_keywords li{
 	display: inline;
 	list-style-type: none;
 	padding-right: 20px;
+}
+
+#chooply_share{
+	float: right;
+	margin-right: 30px;
 }
