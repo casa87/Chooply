@@ -4,12 +4,19 @@
 	height: 30px;
 	width: 100%;
 	
-	background-color: grey;
+	background-color: #FFFFFF;
 	font-size: 14px;
 	z-index: 5000;
 	margin: 0;
 	padding: 0;
 	
+	
+	color:#444444;
+	text-shadow:1px 1px 0 white;
+  	font-family:Arial, Helvetica, sans-serif;
+  	font: normal;
+	font-size: 14px;
+
 	border: none;
 	border-bottom: 2px solid #3B5DFF;
 
@@ -21,8 +28,9 @@
 }
 
 #chooply_bar #chooply_keywords{
+	margin: 8px 0 4px 30px;
 	float: left;
-	max-height: 20px;
+	max-height: 16px;
 	max-width: 80%; 
 	overflow: hidden;
 }
@@ -31,9 +39,10 @@
 	display: inline;
 	list-style-type: none;
 	padding-right: 20px;
+	padding-height: 6px;
 }
 
 #chooply_share{
 	float: right;
-	margin-right: 30px;
+	margin: 8px 30px 0 0;
 }
