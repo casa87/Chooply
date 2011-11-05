@@ -43,6 +43,14 @@ stopWords = {
 	'init': true,
 	'html': true,
 	'doubleclick': true,
+	'none': true,
+	'position': true,
+	'display': true,
+	'getelementbyid': true,
+	'array': true,
+	'block': true,
+	'parent': true,
+	'absolute': true,
 	
 	
 	//site words
@@ -63,12 +71,18 @@ stopWords = {
 	'edit': true,
 	'read': true,
 	'free': true,
+	'categories': true,
+	'article': true,
+	'articles': true,
+	'notes': true,
+	'sign': true,
 	
 	
 	//english words
 	'when': true,
 	'about': true,
 	'the': true,
+	'their': true,
 	'there': true,
 	'they': true,
 	'them': true,
@@ -76,6 +90,8 @@ stopWords = {
 	'than': true,
 	'these': true,
 	'and': true,
+	'what': true,
+	'where': true,
 	'your': true,
 	'with': true,
 	'into': true,
