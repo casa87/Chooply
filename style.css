@@ -14,7 +14,7 @@
 	
 	/*text*/
 	color:#444444;
-  	font-family:Arial, Helvetica, sans-serif;
+  	font-family: Calibri, Arial, sans-serif;
   	font: normal;
 	font-size: 14px;
 
@@ -69,7 +69,6 @@
 #chooply_bar #chooply_keywords span{
 	
 	/*text*/
-	font-family: Calibri, Arial, sans-serif;
 	color:#F2F2F2;
 
 	/*position*/
@@ -92,6 +91,18 @@
 
 /*facebook*/
 #chooply_share{
-	float: right;
-	margin: 8px 30px 0 0;
+	position: absolute;
+	right : 20px;
+	top: 5px;
+	padding: 0px;
+	margin: 0;
+	height: 20px;
+	line-height: 20px;
 }
+
+#chooply_share a, #chooply_share a:hover, #chooply_share a:link, #chooply_share a:visited{
+	text-decoration: none;
+	font-weight: bold;
+	color: #444444;
+}
+
