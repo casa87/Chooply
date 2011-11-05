@@ -8,3 +8,9 @@
 	font-size: 14px;
 	z-index: 5000;
 }
+
+#chooply_bar #chooply_keywords li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+}
