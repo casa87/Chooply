@@ -108,6 +108,24 @@
 
 
 
+/*expand more keywords*/
+.chooply_expand{
+	/*round corner*/
+	border-bottom-left-radius:6px;
+	border-bottom-right-radius:6px;
+	
+	/*gradiant of the bar*/
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+	
+	/*border in blue*/
+	border: none;
+	border-bottom: 2px solid #3B5DFF;	
+	border-left: 1px solid #3B5DFF;
+	border-right: 1px solid #3B5DFF;	
+}
+
+
 
 /*facebook*/
 #chooply_bar #chooply_share{

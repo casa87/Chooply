@@ -233,7 +233,6 @@ $(document).ready(function(){
 	$('#chooply_bar #chooply_keywords').css("max-height", "20px");
 	
 	
-
 	//click on more
 	$('#chooply_bar #chooply_more').click(function() {
 		
@@ -241,13 +240,14 @@ $(document).ready(function(){
 		//already expand
 		if($('#chooply_bar #chooply_keywords').height() > 50)
 		{
-			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',20);
-			$('#chooply_bar #chooply_more').text("more");
+			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',20).removeClass("chooply_expand");	//retract 
+			$('#chooply_bar #chooply_more').text("more");		//change value of the button
+			
 		}
-		else
+		else	//expand
 		{
-			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',350);
-			$('#chooply_bar #chooply_more').text("less");
+			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',350).addClass("chooply_expand");	//expand
+			$('#chooply_bar #chooply_more').text("less");	//change value of the button
 		}
 	});
 	
