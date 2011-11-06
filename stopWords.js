@@ -95,6 +95,7 @@ stopWords = {
 	'home': true,
 	'ignore': true,
 	'infos': true,
+	'loading': true,
 	'loadlikebutton':true,
 	'login': true,
 	'logout': true,
