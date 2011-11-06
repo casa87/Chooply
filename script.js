@@ -5,11 +5,22 @@
 
 $(document).ready(function(){
 
+		
+	var timestart = new Date();
+	
+	///////////////////////////CONFIGURATION///////////////////////////
+	
+	var precision = 70;			// smaller more precise
+	var max_keywords = 30;		//maximun of keywords
+	
+	//////////////////////////////////////////
+	
+	
+	
+	
 	var score = new Array();	//score of each words
 	var total = 0;				//total of words in the page
-	
-	
-	
+
 	
 	
 	/////////////////////////////////////////////////
@@ -136,7 +147,7 @@ $(document).ready(function(){
 	{
 	
 		//focus on more important words
-		if(score[key] > total/130)
+		if(score[key] > total/precision)
 		{	
 		
 			//test plurials
@@ -173,43 +184,62 @@ $(document).ready(function(){
 	///////////////////////
 	//show keywords
 	score_note = score_note.sort(sortNumber).reverse();
+	
+	var total_printed = 0;
 	for(note in score_note)
 	{
 		//$('#chooply_bar').append(score_note[note] +"<br>");	//show frequence
 		for(word in score_sort[score_note[note]])
 		{
+			//check maximun of words
+			if(total_printed < max_keywords)
+			{
 		
-			//test if it's bigram. words in bigrams could be only use one time
-			if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
-			{
-				//extract each words
-				var bigram_words = score_sort[score_note[note]][word].split(' ');
-				
-				
-				//test if words used before in keywords
-				if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
+		
+				//test if it's bigram. words in bigrams could be only use one time
+				if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
 				{
-					$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
+					//extract each words
+					var bigram_words = score_sort[score_note[note]][word].split(' ');
 					
-					//set words used
-					keywords_used[bigram_words[0]] = 1;
-					keywords_used[bigram_words[1]] = 1;				
-				}	
-				
-				
-			}
-			else		//simple words
-			{
-				//test if used
-				if(!keywords_used[score_sort[score_note[note]][word]])
-				{
-					$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
 					
-					//set word use
-					keywords_used[score_sort[score_note[note]][word]] = 1;				
+					//test if words used before in keywords
+					if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
+					{
+						$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
+						
+						//set words used
+						keywords_used[bigram_words[0]] = 1;
+						keywords_used[bigram_words[1]] = 1;
+						
+						total_printed++;				
+					}	
+					
+					
+					
+					
 				}
-			
+				else		//simple words
+				{
+					//test if used
+					if(!keywords_used[score_sort[score_note[note]][word]])
+					{
+						$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
+						
+						//set word use
+						keywords_used[score_sort[score_note[note]][word]] = 1;
+						
+						total_printed++;				
+					}
+				
+				}
+				
+				
 			}
+			else
+			{
+				break;
+			}	
 
 		}
 	
@@ -251,6 +281,6 @@ $(document).ready(function(){
 		}
 	});
 	
-	
-	
+	var timerend = new Date();
+	alert( timerend.getTime() - timestart.getTime());
 })

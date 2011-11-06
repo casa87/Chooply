@@ -69,6 +69,7 @@ stopWords = {
 	'hidden': true,
 	'split': true,
 	'span': true,
+	'value': true,
 	
 	
 	//site words
@@ -125,6 +126,8 @@ stopWords = {
 	'voted': true,
 	'ignore': true,
 	'back': true,
+	'picture': true,
+	'best': true,
 
 	
 	//english words
@@ -179,6 +182,8 @@ stopWords = {
 	'most': true,
 	'because': true,
 	'also': true,
+	'want': true,
+	'less': true,
 	
 	
 	//months
