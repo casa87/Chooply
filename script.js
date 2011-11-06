@@ -136,7 +136,7 @@ $(document).ready(function(){
 	{
 	
 		//focus on more important words
-		if(score[key] > total/180)
+		if(score[key] > total/30)
 		{	
 		
 			//test plurials
@@ -214,6 +214,19 @@ $(document).ready(function(){
 		}
 	
 	}	//end show keywords
+	
+	
+	
+	
+	
+	////////////////////////
+	//more button
+	
+	//show button more if necessary
+	if($('#chooply_bar #chooply_keywords').height() > 50)
+	{
+		$('#chooply_bar #chooply_more').show();
+	}
 	
 	
 	

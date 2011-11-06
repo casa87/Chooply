@@ -43,7 +43,7 @@
 	float: left;
 	overflow: hidden;
 	
-	max-height: 20px;
+	max-height: auto;
 	max-width: 80%; 
 	
 }
@@ -101,13 +101,15 @@
 	margin: 0 0 0 20px;
 	height: 20px;
 	line-height: 20px;
+	
+	display: none;
 }
 
 
 
 
 /*facebook*/
-#chooply_share{
+#chooply_bar #chooply_share{
 	position: absolute;
 	right : 20px;
 	top: 5px;
