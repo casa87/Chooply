@@ -53,10 +53,10 @@
 #chooply_bar #chooply_keywords li{
 	
 	/*text*/
-   	text-align: center;
+   	text-align: left;
 
  	/*size and position*/
- 	margin: 0 0px 20px 10px;
+ 	margin: 0 0px 10px 10px;
 	padding: 0px;	
 
 	/*horizontal list*/
@@ -93,7 +93,7 @@
 
 
 /*more link*/
-#chooply_more{
+#chooply_bar #chooply_more{
 	position: absolute;
 	left : 80%;
 	top: 5px;
@@ -102,6 +102,7 @@
 	height: 20px;
 	line-height: 20px;
 	
+	cursor: pointer;
 	display: none;
 }
 
