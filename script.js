@@ -36,7 +36,7 @@ $(document).ready(function(){
 			 	
 			 	//if start with majuscule increase score
 			 	var mul_maj = 1;
-			 	if(/^[A-Z][a-z]{3,14}$/.test(word))
+			 	if(/^[A-Z][a-z]{3,16}$/.test(word))
 			 	{
 			 		mul_maj = 2;
 			 	}
@@ -71,7 +71,7 @@ $(document).ready(function(){
 				 		word += " " + word_double;		//concate 2 words
 				 		
 				 		//if start with majuscule increase score
-				 		if(/^[A-Z][a-z]{3,14}$/.test(word_double))
+				 		if(/^[A-Z][a-z]{3,16}$/.test(word_double))
 				 		{
 				 			mul_maj += 2;
 				 		}
@@ -101,7 +101,8 @@ $(document).ready(function(){
 	}
 
 
-
+	/////////////////////
+	//modify original page
 	//add margin top to original page for the bar
 	$('html').css("margin-top","30px");
 
@@ -109,6 +110,10 @@ $(document).ready(function(){
 	$('body').prepend('<div id="chooply_bar"><ul id="chooply_keywords"></ul> <div id="chooply_share"><a name="fb_share" type="icon_link" href="http://www.facebook.com/sharer.php">share</a></div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script></div>');
 	
 	
+	
+	
+	////////////////////////
+	//get content
 	//get words of the first div
 	var words = $('body>div div').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);		//increase importance of depth div
 	calcul_score(words , 1);	//content of div importance of 1
@@ -120,6 +125,8 @@ $(document).ready(function(){
 	calcul_score(words , 4);	//content of title importance of 4
 	
 	
+	
+	
 	//////////////////
 	//sort associative array
 	var score_sort = new Array();		//to store words
@@ -127,9 +134,15 @@ $(document).ready(function(){
 	
 	for(key in score)
 	{
+	
 		//focus on more important words
 		if(score[key] > total/180)
-		{
+		{	
+			//test pluriels
+			if((/s$/.test(key)) && (score[key.replace(/s$/, "")]))
+			{
+				alert(key)
+			}		
 			//if score not present create an array of array
 			if(score_sort[score[key]])
 			{
@@ -154,7 +167,7 @@ $(document).ready(function(){
 	var keywords_used = new Array;
 	
 	
-	//////////////////
+	///////////////////////
 	//show keywords
 	score_note = score_note.sort(sortNumber).reverse();
 	for(note in score_note)
@@ -179,6 +192,8 @@ $(document).ready(function(){
 					keywords_used[bigram_words[0]] = 1;
 					keywords_used[bigram_words[1]] = 1;				
 				}	
+				
+				
 			}
 			else		//simple words
 			{

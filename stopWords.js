@@ -66,6 +66,7 @@ stopWords = {
 	'goto': true,
 	'else': true,
 	'session': true,
+	'hidden': true,
 	
 	
 	//site words
@@ -116,6 +117,11 @@ stopWords = {
 	'options': true,
 	'permalink': true,
 	'share': true,
+	'minutes': true,
+	'view': true,
+	'show': true,
+	'voted': true,
+	'ignore': true,
 
 	
 	//english words
@@ -146,6 +152,7 @@ stopWords = {
 	'says': true,
 	'some': true,
 	'where': true,
+	'were': true,
 	'over': true,
 	'maybe': true,
 	'later': true,
@@ -163,6 +170,10 @@ stopWords = {
 	'last': true,
 	'please': true,
 	'while': true,
+	'like': true,
+	'small': true,
+	'most': true,
+	'because': true,
 	
 	
 	//months
