@@ -138,11 +138,13 @@ $(document).ready(function(){
 		//focus on more important words
 		if(score[key] > total/180)
 		{	
-			//test pluriels
+		
+			//test plurials
 			if((/s$/.test(key)) && (score[key.replace(/s$/, "")]))
 			{
-				alert(key)
+				key = key.replace(/s$/, "");
 			}		
+			
 			//if score not present create an array of array
 			if(score_sort[score[key]])
 			{
@@ -155,7 +157,8 @@ $(document).ready(function(){
 				score_sort[score[key]] = new Array();
 				score_sort[score[key]].push(key);
 			}
-			//$('#chooply_bar').append(key + " : "+ score[key] +"<br>");
+
+
 		}	
 	}
 	

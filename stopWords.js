@@ -67,6 +67,8 @@ stopWords = {
 	'else': true,
 	'session': true,
 	'hidden': true,
+	'split': true,
+	'span': true,
 	
 	
 	//site words
@@ -122,6 +124,7 @@ stopWords = {
 	'show': true,
 	'voted': true,
 	'ignore': true,
+	'back': true,
 
 	
 	//english words
@@ -129,6 +132,7 @@ stopWords = {
 	'would': true,
 	'wait': true,
 	'about': true,
+	'same': true,
 	'here': true,
 	'the': true,
 	'their': true,
@@ -188,5 +192,7 @@ stopWords = {
 	'september': true,
 	'october': true,
 	'november': true,
-	'december': true
+	'december': true,
+	'year': true,
+	'months': true,
 };
