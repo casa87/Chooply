@@ -107,7 +107,7 @@ $(document).ready(function(){
 	$('html').css("margin-top","30px");
 
 	//add div on body of the page to create the bar
-	$('body').prepend('<div id="chooply_bar"><ul id="chooply_keywords"></ul> <div id="chooply_share"><a name="fb_share" type="icon_link" href="http://www.facebook.com/sharer.php">share</a></div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script></div>');
+	$('body').prepend('<div id="chooply_bar"><ul id="chooply_keywords"></ul><a id="chooply_more" href="#">more</a> <div id="chooply_share"><a name="fb_share" type="icon_link" href="http://www.facebook.com/sharer.php">share</a></div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script></div>');
 	
 	
 	

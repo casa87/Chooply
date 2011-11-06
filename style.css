@@ -91,6 +91,21 @@
 
 
 
+
+/*more link*/
+#chooply_more{
+	position: absolute;
+	left : 80%;
+	top: 5px;
+	padding: 0px;
+	margin: 0 0 0 20px;
+	height: 20px;
+	line-height: 20px;
+}
+
+
+
+
 /*facebook*/
 #chooply_share{
 	position: absolute;
@@ -102,7 +117,7 @@
 	line-height: 20px;
 }
 
-#chooply_share a, #chooply_share a:hover, #chooply_share a:link, #chooply_share a:visited{
+#chooply_bar a, #chooply_bar a:hover, #chooply_bar a:link, #chooply_bar a:visited{
 	text-decoration: none;
 	font-weight: bold;
 	color: #444444;

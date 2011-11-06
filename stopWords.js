@@ -178,6 +178,7 @@ stopWords = {
 	'small': true,
 	'most': true,
 	'because': true,
+	'also': true,
 	
 	
 	//months
