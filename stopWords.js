@@ -51,6 +51,14 @@ stopWords = {
 	'block': true,
 	'parent': true,
 	'absolute': true,
+	'form': true,
+	'return': true,
+	'true': true,
+	'margin': true,
+	'size': true,
+	'color': true,
+	'solid': true,
+	'float': true,
 	
 	
 	//site words
@@ -81,10 +89,26 @@ stopWords = {
 	'post': true,
 	'submit': true,
 	'message': true,
-	
+	'send': true,
+	'mail': true,
+	'email': true,
+	'ratings': true,
+	'rate': true,
+	'tile': true,
+	'name': true,
+	'print': true,
+	'report': true,
+	'user': true,
+	'abuse': true,
+	'cancel': true,
+	'score': true,
+	'subscribe': true,
+	'find': true,
+
 	
 	//english words
 	'when': true,
+	'wait': true,
 	'about': true,
 	'the': true,
 	'their': true,
@@ -115,5 +139,14 @@ stopWords = {
 	'last': true,
 	'lastest': true,
 	'pricing': true,
+	'just': true,
+	'will': true,
+	'help': true,
+	'please': true,
+	'news': true,
+	'several': true,
+	'said': true,
+	'last': true,
+	'please': true,
 	'while': true
 };

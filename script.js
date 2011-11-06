@@ -22,7 +22,7 @@ $(document).ready(function(){
 	
 	/////////////////////////////////////////////////
 	//fonction to count the frequence of each words
-	function calcul_score(words)
+	function calcul_score(words, importance)
 	{
 		for(i=0; i<words.length; i++)
 		{
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			 	word = word.toLowerCase();
 		
 		
-			 	var note = 1 * mul_maj;	
+			 	var note = 1 * mul_maj * importance;	
 			 
 			 	total++;	//increment total of words
 			 
@@ -77,7 +77,7 @@ $(document).ready(function(){
 				 		}
 				 		word = word.toLowerCase();
 				 		
-				 		var note = 1 * mul_maj;
+				 		var note = 1 * mul_maj  * importance;
 				 	
 				 		total++;
 				 	
@@ -111,10 +111,13 @@ $(document).ready(function(){
 	
 	//get words of the first div
 	var words = $('body>div div').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);		//increase importance of depth div
+	calcul_score(words , 1);	//content of div importance of 1
 	
-	calcul_score(words);
+	var hn = $('h1, h2').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);		//increase importance of depth div
+	calcul_score(words , 2);	//content of h1 and h2 importance of 2
 	
-	
+	var hn = $('title').text().match(/\b([a-zA-Zéèàê]{4,14})\b/g);		//increase importance of depth div
+	calcul_score(words , 4);	//content of title importance of 4
 	
 	
 	//////////////////
