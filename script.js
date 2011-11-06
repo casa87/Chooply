@@ -5,9 +5,7 @@
 
 $(document).ready(function(){
 
-		
-	var timestart = new Date();
-	
+			
 	///////////////////////////CONFIGURATION///////////////////////////
 	
 	var precision = 70;			// smaller more precise
@@ -281,6 +279,6 @@ $(document).ready(function(){
 		}
 	});
 	
-	var timerend = new Date();
-	alert( timerend.getTime() - timestart.getTime());
+	
+	
 })
