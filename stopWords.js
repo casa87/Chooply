@@ -59,6 +59,13 @@ stopWords = {
 	'color': true,
 	'solid': true,
 	'float': true,
+	'window': true,
+	'arial': true,
+	'helvetica': true,
+	'class': true,
+	'goto': true,
+	'else': true,
+	'session': true,
 	
 	
 	//site words
@@ -104,12 +111,19 @@ stopWords = {
 	'score': true,
 	'subscribe': true,
 	'find': true,
+	'click': true,
+	'watch': true,
+	'options': true,
+	'permalink': true,
+	'share': true,
 
 	
 	//english words
 	'when': true,
+	'would': true,
 	'wait': true,
 	'about': true,
+	'here': true,
 	'the': true,
 	'their': true,
 	'there': true,
@@ -148,5 +162,20 @@ stopWords = {
 	'said': true,
 	'last': true,
 	'please': true,
-	'while': true
+	'while': true,
+	
+	
+	//months
+	'january': true,
+	'february': true,
+	'march': true,
+	'april': true,
+	'may': true,
+	'june': true,
+	'july': true,
+	'august': true,
+	'september': true,
+	'october': true,
+	'november': true,
+	'december': true
 };
