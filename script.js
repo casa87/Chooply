@@ -233,9 +233,22 @@ $(document).ready(function(){
 	$('#chooply_bar #chooply_keywords').css("max-height", "20px");
 	
 	
+
 	//click on more
 	$('#chooply_bar #chooply_more').click(function() {
-		$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',350);
+		
+		
+		//already expand
+		if($('#chooply_bar #chooply_keywords').height() > 50)
+		{
+			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',20);
+			$('#chooply_bar #chooply_more').text("more");
+		}
+		else
+		{
+			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',350);
+			$('#chooply_bar #chooply_more').text("less");
+		}
 	});
 	
 	
