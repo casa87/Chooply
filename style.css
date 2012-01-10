@@ -1,5 +1,3 @@
-
-
 /*BAR*/
 #chooply_bar{
 	/*size and position*/
@@ -44,14 +42,12 @@
 	overflow: hidden;
 	
 	max-height: auto;
-	max-width: 80%; 
-	
+	max-width: 80%; 	
 }
 
 
 /*keywords li*/
-#chooply_bar #chooply_keywords li{
-	
+#chooply_bar #chooply_keywords li{	
 	/*text*/
    	text-align: left;
 
@@ -63,13 +59,11 @@
 	display: inline;
 	list-style-type: none;
 	position: relative;
-    display: inline-block;
-	
+   	display: inline-block;
 }
 
 
 #chooply_bar #chooply_keywords span{
-	
 	/*text*/
 	color:#F2F2F2;
 
@@ -83,10 +77,8 @@
 	/*look*/
 	background-color: #009AD5;
 	-webkit-box-shadow:0 0 1px #fff inset;
-    box-shadow:0 0 1px #fff inset;
-    border-radius:6px;
-    
-
+    	box-shadow:0 0 1px #fff inset;
+    	border-radius:6px;
 }
 
 
