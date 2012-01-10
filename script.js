@@ -7,19 +7,13 @@ $(document).ready(function(){
 
 			
 	///////////////////////////CONFIGURATION///////////////////////////
-	
-	var precision = 70;			// smaller more precise
+	var precision = 70;		// smaller more precise
 	var max_keywords = 30;		//maximun of keywords
-	
 	//////////////////////////////////////////
 	
-	
-	
-	
 	var score = new Array();	//score of each words
-	var total = 0;				//total of words in the page
+	var total = 0;			//total of words in the page
 
-	
 	
 	/////////////////////////////////////////////////
 	//fonction to sort array by number
@@ -35,14 +29,11 @@ $(document).ready(function(){
 	{
 		for(i=0; i<words.length; i++)
 		{
-		
-		
 			var word = words[i];
 			if(!stopWords[word.toLowerCase()])
 			{
 				/////////////////////////////////
-				//simple word
-			 	
+				//simple word	
 			 	//if start with majuscule increase score
 			 	var mul_maj = 1;
 			 	if(/^[A-Z][a-z]{3,16}$/.test(word))
@@ -50,10 +41,7 @@ $(document).ready(function(){
 			 		mul_maj = 2;
 			 	}
 			 	word = word.toLowerCase();
-		
-		
 			 	var note = 1 * mul_maj * importance;	
-			 
 			 	total++;	//increment total of words
 			 
 			 	//if words is in the array	
@@ -66,28 +54,22 @@ $(document).ready(function(){
 			 		score[word] = note;
 			 	}
 			 	
-			 	
-			 	
+
 			 	/////////////////////////////////
 			 	//bigram
 			 	if(i < words.length - 1)
 			 	{
-	
 				 	var word_double = words[i+1];	
 				 	if(!stopWords[word_double.toLowerCase()])
-					{	
-				 		
+					{		
 				 		word += " " + word_double;		//concate 2 words
-				 		
 				 		//if start with majuscule increase score
 				 		if(/^[A-Z][a-z]{3,16}$/.test(word_double))
 				 		{
 				 			mul_maj += 2;
 				 		}
 				 		word = word.toLowerCase();
-				 		
 				 		var note = 1 * mul_maj  * importance;
-				 	
 				 		total++;
 				 	
 				 		//if bigram is in the array
@@ -101,12 +83,8 @@ $(document).ready(function(){
 				 		}
 				 	}	
 			 	}
-		 		
-		 	
 		 	}	//end stop words	
-
-		 }
-		 	
+		 }		 	
 	}
 
 
@@ -143,21 +121,17 @@ $(document).ready(function(){
 	
 	for(key in score)
 	{
-	
 		//focus on more important words
 		if(score[key] > total/precision)
 		{	
-		
 			//test plurials
 			if((/s$/.test(key)) && (score[key.replace(/s$/, "")]))
 			{
 				key = key.replace(/s$/, "");
 			}		
-			
 			//if score not present create an array of array
 			if(score_sort[score[key]])
-			{
-			
+			{	
 				score_sort[score[key]].push(key);
 			}
 			else
@@ -166,12 +140,8 @@ $(document).ready(function(){
 				score_sort[score[key]] = new Array();
 				score_sort[score[key]].push(key);
 			}
-
-
 		}	
 	}
-	
-	
 	
 	
 	
@@ -181,8 +151,7 @@ $(document).ready(function(){
 	
 	///////////////////////
 	//show keywords
-	score_note = score_note.sort(sortNumber).reverse();
-	
+	score_note = score_note.sort(sortNumber).reverse();	
 	var total_printed = 0;
 	for(note in score_note)
 	{
@@ -192,30 +161,21 @@ $(document).ready(function(){
 			//check maximun of words
 			if(total_printed < max_keywords)
 			{
-		
-		
 				//test if it's bigram. words in bigrams could be only use one time
 				if(/[a-z]*\s[a-z]/.test(score_sort[score_note[note]][word]))
 				{
 					//extract each words
 					var bigram_words = score_sort[score_note[note]][word].split(' ');
-					
-					
+
 					//test if words used before in keywords
 					if((!keywords_used[bigram_words[0]]) && (!keywords_used[bigram_words[1]]))
 					{
-						$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
-						
+						$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");	
 						//set words used
 						keywords_used[bigram_words[0]] = 1;
 						keywords_used[bigram_words[1]] = 1;
-						
 						total_printed++;				
-					}	
-					
-					
-					
-					
+					}		
 				}
 				else		//simple words
 				{
@@ -223,30 +183,20 @@ $(document).ready(function(){
 					if(!keywords_used[score_sort[score_note[note]][word]])
 					{
 						$('#chooply_bar #chooply_keywords').append("<li><span>" + score_sort[score_note[note]][word] + "</span></li>");
-						
 						//set word use
 						keywords_used[score_sort[score_note[note]][word]] = 1;
-						
 						total_printed++;				
 					}
-				
-				}
-				
-				
+				}	
 			}
 			else
 			{
 				break;
 			}	
-
-		}
-	
+		}	
 	}	//end show keywords
 	
-	
-	
-	
-	
+		
 	////////////////////////
 	//more button
 	
@@ -256,21 +206,16 @@ $(document).ready(function(){
 	{
 		$('#chooply_bar #chooply_more').show();
 	}
-	
 	//set max line of ul for labels on one line
 	$('#chooply_bar #chooply_keywords').css("max-height", "20px");
-	
-	
 	//click on more
 	$('#chooply_bar #chooply_more').click(function() {
-		
-		
+
 		//already expand
 		if($('#chooply_bar #chooply_keywords').height() > 50)
 		{
 			$('#chooply_bar #chooply_keywords').css('height','auto').css('max-height',20).removeClass("chooply_expand");	//retract 
-			$('#chooply_bar #chooply_more').text("more");		//change value of the button
-			
+			$('#chooply_bar #chooply_more').text("more");		//change value of the button		
 		}
 		else	//expand
 		{
@@ -278,7 +223,5 @@ $(document).ready(function(){
 			$('#chooply_bar #chooply_more').text("less");	//change value of the button
 		}
 	});
-	
-	
 	
 })
